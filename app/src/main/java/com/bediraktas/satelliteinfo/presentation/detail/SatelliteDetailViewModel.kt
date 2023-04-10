@@ -4,8 +4,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.bediraktas.satelliteinfo.data.model.entity.SatellitePosition
 import com.bediraktas.satelliteinfo.domain.usecase.detail.GetSatelliteUIUseCase
-import com.bediraktas.satelliteinfo.util.Constant.POSITION_CHANGE_DELAY
-import com.bediraktas.satelliteinfo.util.Resource
+import com.bediraktas.satelliteinfo.common.Constant.POSITION_CHANGE_DELAY
+import com.bediraktas.satelliteinfo.common.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -42,9 +42,14 @@ class SatelliteDetailViewModel @Inject constructor(
     fun changePosition(list: List<SatellitePosition?>?) {
         viewModelScope.launch {
             val positions = list?.get(0)?.positions
-            for (i in 1 until positions!!.size) {
+            var i = 1
+            while (true) {
+                if (i == positions!!.size) {
+                    i = 1
+                }
                 delay(POSITION_CHANGE_DELAY)
                 _satelliteDetailFlow.value = SatelliteDetailViewState.PositionChange(positions[i])
+                i++
             }
         }
     }

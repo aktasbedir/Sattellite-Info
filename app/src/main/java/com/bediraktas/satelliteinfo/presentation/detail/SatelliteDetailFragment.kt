@@ -13,8 +13,8 @@ import com.bediraktas.satelliteinfo.R
 import com.bediraktas.satelliteinfo.databinding.FragmentSatelliteDetailBinding
 import com.bediraktas.satelliteinfo.domain.model.SatelliteDetailUIModel
 import com.bediraktas.satelliteinfo.presentation.BaseFragment
-import com.bediraktas.satelliteinfo.util.partialBold
-import com.bediraktas.satelliteinfo.util.viewBinding
+import com.bediraktas.satelliteinfo.common.partialBold
+import com.bediraktas.satelliteinfo.common.viewBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 

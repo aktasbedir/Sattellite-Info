@@ -14,8 +14,8 @@ import com.bediraktas.satelliteinfo.R
 import com.bediraktas.satelliteinfo.databinding.FragmentSatelliteListBinding
 import com.bediraktas.satelliteinfo.domain.model.SatelliteUIModel
 import com.bediraktas.satelliteinfo.presentation.BaseFragment
-import com.bediraktas.satelliteinfo.util.DividerItemDecorator
-import com.bediraktas.satelliteinfo.util.viewBinding
+import com.bediraktas.satelliteinfo.common.DividerItemDecorator
+import com.bediraktas.satelliteinfo.common.viewBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 

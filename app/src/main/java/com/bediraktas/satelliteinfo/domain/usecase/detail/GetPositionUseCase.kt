@@ -3,8 +3,8 @@ package com.bediraktas.satelliteinfo.domain.usecase.detail
 import com.bediraktas.satelliteinfo.data.model.entity.SatellitePosition
 import com.bediraktas.satelliteinfo.domain.repository.SatelliteRepository
 import com.bediraktas.satelliteinfo.domain.usecase.BaseUseCase
-import com.bediraktas.satelliteinfo.util.Constant.SATELLITE_POSITION_FILE
-import com.bediraktas.satelliteinfo.util.Resource
+import com.bediraktas.satelliteinfo.common.Constant.SATELLITE_POSITION_FILE
+import com.bediraktas.satelliteinfo.common.Resource
 
 
 import javax.inject.Inject

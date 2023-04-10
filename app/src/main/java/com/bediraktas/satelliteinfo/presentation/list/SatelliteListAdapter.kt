@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bediraktas.satelliteinfo.databinding.ItemSatelliteListBinding
 import com.bediraktas.satelliteinfo.domain.model.SatelliteUIModel
-import com.bediraktas.satelliteinfo.util.viewBinding
+import com.bediraktas.satelliteinfo.common.viewBinding
 
 
 class SatelliteListAdapter(

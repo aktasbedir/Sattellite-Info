@@ -3,7 +3,7 @@ package com.bediraktas.satelliteinfo.domain.usecase.detail
 import com.bediraktas.satelliteinfo.domain.mapper.SatelliteDetailUIModelMapper
 import com.bediraktas.satelliteinfo.domain.model.SatelliteDetailUIModel
 import com.bediraktas.satelliteinfo.domain.usecase.BaseUseCase
-import com.bediraktas.satelliteinfo.util.Resource
+import com.bediraktas.satelliteinfo.common.Resource
 import javax.inject.Inject
 
 class GetSatelliteUIUseCase @Inject constructor(

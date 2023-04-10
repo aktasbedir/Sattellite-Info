@@ -3,8 +3,8 @@ package com.bediraktas.satelliteinfo.data.datasource.local
 import com.bediraktas.satelliteinfo.data.db.SatelliteDao
 import com.bediraktas.satelliteinfo.data.model.entity.SatelliteDetail
 import com.bediraktas.satelliteinfo.data.model.entity.SatellitePosition
-import com.bediraktas.satelliteinfo.util.Constant.LIST_EMPTY_ERROR
-import com.bediraktas.satelliteinfo.util.Resource
+import com.bediraktas.satelliteinfo.common.Constant.LIST_EMPTY_ERROR
+import com.bediraktas.satelliteinfo.common.Resource
 import javax.inject.Inject
 
 class RoomDataSourceImpl @Inject constructor(private val dao: SatelliteDao) : RoomDataSource {

@@ -4,7 +4,7 @@ import com.bediraktas.satelliteinfo.domain.mapper.SatelliteUIModelMapper
 import com.bediraktas.satelliteinfo.domain.model.SatelliteUIModel
 import com.bediraktas.satelliteinfo.domain.repository.SatelliteRepository
 import com.bediraktas.satelliteinfo.domain.usecase.BaseUseCase
-import com.bediraktas.satelliteinfo.util.Resource
+import com.bediraktas.satelliteinfo.common.Resource
 import kotlinx.coroutines.delay
 import javax.inject.Inject
 

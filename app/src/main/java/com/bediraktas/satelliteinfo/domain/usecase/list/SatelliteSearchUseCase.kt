@@ -2,7 +2,7 @@ package com.bediraktas.satelliteinfo.domain.usecase.list
 
 import com.bediraktas.satelliteinfo.domain.model.SatelliteUIModel
 import com.bediraktas.satelliteinfo.domain.usecase.BaseUseCase
-import com.bediraktas.satelliteinfo.util.Resource
+import com.bediraktas.satelliteinfo.common.Resource
 import javax.inject.Inject
 
 class SatelliteSearchUseCase @Inject constructor(

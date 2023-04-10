@@ -4,8 +4,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.bediraktas.satelliteinfo.domain.usecase.list.SatelliteListUseCase
 import com.bediraktas.satelliteinfo.domain.usecase.list.SatelliteSearchUseCase
-import com.bediraktas.satelliteinfo.util.Constant.SATELLITE_FILE
-import com.bediraktas.satelliteinfo.util.Resource
+import com.bediraktas.satelliteinfo.common.Constant.SATELLITE_FILE
+import com.bediraktas.satelliteinfo.common.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

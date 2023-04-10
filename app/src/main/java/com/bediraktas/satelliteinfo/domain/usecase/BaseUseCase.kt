@@ -1,6 +1,6 @@
 package com.bediraktas.satelliteinfo.domain.usecase
 
-import com.bediraktas.satelliteinfo.util.Resource
+import com.bediraktas.satelliteinfo.common.Resource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 

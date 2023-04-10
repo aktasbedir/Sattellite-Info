@@ -3,7 +3,7 @@ package com.bediraktas.satelliteinfo.domain.repository
 import com.bediraktas.satelliteinfo.data.model.entity.SatelliteDetail
 import com.bediraktas.satelliteinfo.data.model.entity.SatellitePosition
 import com.bediraktas.satelliteinfo.data.model.response.Satellite
-import com.bediraktas.satelliteinfo.util.Resource
+import com.bediraktas.satelliteinfo.common.Resource
 
 
 interface SatelliteRepository {
