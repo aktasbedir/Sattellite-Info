@@ -1,0 +1,28 @@
+@file:Suppress("PackageDirectoryMismatch")
+
+object Dependencies {
+    const val appCompat = "androidx.appcompat:appcompat:${`Version Catalog`.appCompatVersion}"
+    const val coreKtx = "androidx.core:core-ktx:${`Version Catalog`.coreKtxVersion}"
+    const val material = "com.google.android.material:material:${`Version Catalog`.materialVersion}"
+    const val constraintLayout = "androidx.constraintlayout:constraintlayout:${`Version Catalog`.constraintLayoutVersion}"
+    const val junit4 = "junit:junit:${`Version Catalog`.junit4Version}"
+    const val junitExtensions = "androidx.test.ext:junit:${`Version Catalog`.junitExtensionsVersion}"
+    const val espressoCore = "androidx.test.espresso:espresso-core:${`Version Catalog`.espressoCoreVersion}"
+    const val hilt = "com.google.dagger:hilt-android:${`Version Catalog`.hilt}"
+    const val hiltCompiler = "com.google.dagger:hilt-android-compiler:${`Version Catalog`.hilt}"
+    const val hiltGradlePlugin = "com.google.dagger:hilt-android-gradle-plugin:${`Version Catalog`.hilt}"
+    const val workManager = "androidx.work:work-runtime-ktx:${`Version Catalog`.workmanager}"
+    const val coroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${`Version Catalog`.coroutines}"
+    const val coroutinesAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${`Version Catalog`.coroutines}"
+    const val gson = "com.google.code.gson:gson:${`Version Catalog`.gson}"
+    const val room = "androidx.room:room-runtime:${`Version Catalog`.room}"
+    const val roomKtx = "androidx.room:room-ktx:${`Version Catalog`.room}"
+    const val roomCompiler = "androidx.room:room-compiler:${`Version Catalog`.room}"
+    const val navigationComponent = "androidx.navigation:navigation-fragment-ktx:${`Version Catalog`.navigationComponent}"
+    const val navigationComponentUi = "androidx.navigation:navigation-ui-ktx:${`Version Catalog`.navigationComponent}"
+    const val navigationSafeArgs = "androidx.navigation:navigation-safe-args-gradle-plugin:${`Version Catalog`.navigationComponent}"
+    const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${`Version Catalog`.lifeCycleVersion}"
+    const val liveData = "androidx.lifecycle:lifecycle-livedata-ktx:${`Version Catalog`.lifeCycleVersion}"
+    const val savedState = "androidx.lifecycle:lifecycle-viewmodel-savedstate:${`Version Catalog`.lifeCycleVersion}"
+    const val lifeCycleRunTime = "androidx.lifecycle:lifecycle-runtime-ktx:${`Version Catalog`.lifeCycleVersion}"
+}

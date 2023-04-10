@@ -1,21 +1,25 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id("kotlin-kapt")
+    id("com.google.dagger.hilt.android")
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
-    namespace 'com.bediraktas.satelliteinfo'
-    compileSdk 33
+    namespace = Configs.applicationId
+    compileSdk = Configs.compileSdkVersion
 
     defaultConfig {
-        applicationId "com.bediraktas.satelliteinfo"
-        minSdk 24
-        targetSdk 33
-        versionCode 1
-        versionName "1.0"
+        applicationId = Configs.applicationId
+        minSdk = Configs.minSdkVersion
+        targetSdk = Configs.targetSdkVersion
+        versionCode = Configs.versionCode
+        versionName = Configs.versionName
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = Configs.testInstrumentationRunner
     }
+
 
     buildTypes {
         release {
@@ -24,21 +28,41 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+    buildFeatures {
+        viewBinding = true
     }
 }
 
 dependencies {
+    implementation(Dependencies.coreKtx)
+    implementation(Dependencies.appCompat)
+    implementation(Dependencies.material)
+    implementation(Dependencies.constraintLayout)
+    implementation(Dependencies.workManager)
+    implementation(Dependencies.hilt)
+    kapt(Dependencies.hiltCompiler)
+    annotationProcessor(Dependencies.hiltCompiler)
+    implementation(Dependencies.coroutinesCore)
+    implementation(Dependencies.coroutinesAndroid)
+    implementation(Dependencies.gson)
+    implementation(Dependencies.room)
+    implementation(Dependencies.roomKtx)
+    kapt(Dependencies.roomCompiler)
+    annotationProcessor(Dependencies.roomCompiler)
+    implementation(Dependencies.navigationComponent)
+    implementation(Dependencies.navigationComponentUi)
+    implementation(Dependencies.viewModel)
+    implementation(Dependencies.liveData)
+    implementation(Dependencies.savedState)
+    implementation(Dependencies.lifeCycleRunTime)
+    testImplementation(Dependencies.junit4)
 
-    implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.8.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    androidTestImplementation(Dependencies.junitExtensions)
+    androidTestImplementation(Dependencies.espressoCore)
 }

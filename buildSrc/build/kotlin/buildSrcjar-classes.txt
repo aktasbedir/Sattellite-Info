@@ -1,0 +1,1 @@
+/Users/bedir/Desktop/case/SatelliteInfo/buildSrc/build/classes/kotlin/main/ClassPaths.class:/Users/bedir/Desktop/case/SatelliteInfo/buildSrc/build/classes/kotlin/main/Configs.class:/Users/bedir/Desktop/case/SatelliteInfo/buildSrc/build/classes/kotlin/main/Dependencies.class:/Users/bedir/Desktop/case/SatelliteInfo/buildSrc/build/classes/kotlin/main/Version Catalog.class
