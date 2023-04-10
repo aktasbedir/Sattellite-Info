@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Satellite Info</string>
+    <string name="search">Search</string>
+    <string name="cost">Cost:</string>
+    <string name="height_mass">Height/Mass:</string>
+    <string name="last_position">Last Position:</string>
 </resources>
