@@ -13,7 +13,7 @@ fun inputStreamToString(inputStream: InputStream): String {
         inputStream.read(bytes, 0, bytes.size)
         String(bytes)
     } catch (e: IOException) {
-        "IO_ERROR"
+        IO_ERROR
     }
 }
 
@@ -21,15 +21,15 @@ inline fun <reified T> Context.getListFromJson(
     jsonFileName: String,
     gson: Gson,
     listType: Type
-): Result<T> {
+): Resource<T> {
     val myJson = inputStreamToString(this.assets.open(jsonFileName))
-    return if (myJson == IO_ERROR) Result.Error(IO_ERROR)
-    else Result.Success(gson.fromJson<T>(myJson, listType))
+    return if (myJson == IO_ERROR) Resource.Failure(IO_ERROR)
+    else Resource.Success(gson.fromJson<T>(myJson, listType))
 }
 
-inline fun <reified T> Context.getObjectFromJson(jsonFileName: String, gson: Gson): Result<T> {
+inline fun <reified T> Context.getObjectFromJson(jsonFileName: String, gson: Gson): Resource<T> {
     val myJson = inputStreamToString(this.assets.open(jsonFileName))
-    return if (myJson == IO_ERROR) Result.Error(IO_ERROR)
-    else Result.Success(gson.fromJson(myJson, T::class.java))
+    return if (myJson == IO_ERROR) Resource.Failure(IO_ERROR)
+    else Resource.Success(gson.fromJson(myJson, T::class.java))
 }
 

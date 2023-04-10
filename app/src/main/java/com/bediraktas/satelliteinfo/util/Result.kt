@@ -9,7 +9,10 @@ sealed interface Result<out T> {
     data class Error(val error: String) : Result<Nothing>
     object Loading : Result<Nothing>
 }
-
+sealed class Resource<out R> {
+    data class Success<out T>(val data: T) : Resource<T>()
+    data class Failure(val error: String) : Resource<Nothing>()
+}
 fun <T> Flow<T>.asResult(): Flow<Result<T>> {
     return this
         .map<T, Result<T>> {
