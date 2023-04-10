@@ -1,6 +1,6 @@
 # Sattellite-Info
 
-⬇️ [Download APK](https://github.com/aktasbedir/Sattellite-Info/raw/develop/app-debug.apk)
+⬇️ [Download APK](https://github.com/aktasbedir/Sattellite-Info/releases/download/1.0.0/app-debug.apk)
 
 ##  Libraries
 
@@ -14,4 +14,4 @@
   - [Room](https://developer.android.com/topic/libraries/architecture/room) 
 - [Dependency Injection](https://developer.android.com/training/dependency-injection) 
   - [Hilt-Dagger](https://dagger.dev/hilt/)
-  - [Hilt-ViewModel](https://developer.android.com/training/dependency-injection/hilt-jetpack) 
+  
