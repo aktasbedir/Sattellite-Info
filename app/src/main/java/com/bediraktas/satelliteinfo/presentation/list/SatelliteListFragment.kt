@@ -94,14 +94,17 @@ class SatelliteListFragment :
         ).also(findNavController()::navigate)
     }
 
-    override fun onStart() {
-        super.onStart()
+
+    override fun onResume() {
+        super.onResume()
         clearSearchView()
     }
+
     private fun clearSearchView() {
         binding.searchView.setQuery("", false)
         binding.searchView.clearFocus()
     }
+
 
 
 }
