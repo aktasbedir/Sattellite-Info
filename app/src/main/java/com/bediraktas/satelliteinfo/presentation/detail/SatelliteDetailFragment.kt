@@ -1,8 +1,6 @@
 package com.bediraktas.satelliteinfo.presentation.detail
 
 import android.util.Log
-import android.view.View.GONE
-import android.view.View.VISIBLE
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
@@ -10,11 +8,13 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.navArgs
 import com.bediraktas.satelliteinfo.R
+import com.bediraktas.satelliteinfo.common.hide
+import com.bediraktas.satelliteinfo.common.partialBold
+import com.bediraktas.satelliteinfo.common.show
+import com.bediraktas.satelliteinfo.common.viewBinding
 import com.bediraktas.satelliteinfo.databinding.FragmentSatelliteDetailBinding
 import com.bediraktas.satelliteinfo.domain.model.SatelliteDetailUIModel
 import com.bediraktas.satelliteinfo.presentation.BaseFragment
-import com.bediraktas.satelliteinfo.common.partialBold
-import com.bediraktas.satelliteinfo.common.viewBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -33,12 +33,12 @@ class SatelliteDetailFragment :
                     it?.let {
                         when (it) {
                             SatelliteDetailViewState.Loading -> {
-                                binding.progressBar.visibility = VISIBLE
+                                binding.progressBar.show()
                             }
                             is SatelliteDetailViewState.DataLoaded -> {
                                 updateUI(it.satelliteDetailUIModel)
                                 viewModel.changePosition(it.satelliteDetailUIModel?.lastPosition)
-                                binding.progressBar.visibility = GONE
+                                binding.progressBar.hide()
                             }
                             is SatelliteDetailViewState.PositionChange -> {
                                 binding.lastPositionTv.partialBold(
@@ -48,7 +48,7 @@ class SatelliteDetailFragment :
                                             .plus(it.position?.posY.toString())
                                     ).plus(")")
                                 )
-                                binding.progressBar.visibility = GONE
+                                binding.progressBar.hide()
                             }
                             is SatelliteDetailViewState.Failure -> {
                                 Toast.makeText(
@@ -57,7 +57,7 @@ class SatelliteDetailFragment :
                                     Toast.LENGTH_SHORT
                                 ).show()
                                 Log.i("TAG", "observeViewModel:${it.error} ")
-                                binding.progressBar.visibility = GONE
+                                binding.progressBar.hide()
                             }
                         }
                     }

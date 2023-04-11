@@ -15,9 +15,14 @@ abstract class BaseFragment<VM : ViewModel>(view: Int) : Fragment(view) {
 
     open fun observeViewModel(viewModel: VM) {}
 
+//    open fun onBackPressed() {
+//        // boş bırakabilirsiniz
+//    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initUI()
         observeViewModel(viewModel = viewModel)
     }
+
 }

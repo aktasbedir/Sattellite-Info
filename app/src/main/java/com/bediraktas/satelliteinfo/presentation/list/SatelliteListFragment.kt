@@ -1,6 +1,5 @@
 package com.bediraktas.satelliteinfo.presentation.list
 
-import android.view.View
 import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.core.content.ContextCompat
@@ -11,11 +10,13 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bediraktas.satelliteinfo.R
+import com.bediraktas.satelliteinfo.common.DividerItemDecorator
+import com.bediraktas.satelliteinfo.common.hide
+import com.bediraktas.satelliteinfo.common.show
+import com.bediraktas.satelliteinfo.common.viewBinding
 import com.bediraktas.satelliteinfo.databinding.FragmentSatelliteListBinding
 import com.bediraktas.satelliteinfo.domain.model.SatelliteUIModel
 import com.bediraktas.satelliteinfo.presentation.BaseFragment
-import com.bediraktas.satelliteinfo.common.DividerItemDecorator
-import com.bediraktas.satelliteinfo.common.viewBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -35,16 +36,19 @@ class SatelliteListFragment :
                     it?.let {
                         when (it) {
                             SatelliteListViewState.Loading -> {
-                                binding.progressBar.visibility = View.VISIBLE
+                                binding.progressBar.show()
+                                binding.rv.hide()
                             }
                             is SatelliteListViewState.ListLoaded -> {
                                 listAdapter.updateItemList(it.list?.toMutableList())
-                                binding.progressBar.visibility = View.GONE
+                                binding.progressBar.hide()
+                                binding.rv.show()
+
                             }
                             is SatelliteListViewState.Failure -> {
                                 Toast.makeText(context, it.errorName, Toast.LENGTH_SHORT)
                                     .show()
-                                binding.progressBar.visibility = View.GONE
+                                binding.progressBar.hide()
                             }
                         }
                     }
@@ -89,4 +93,15 @@ class SatelliteListFragment :
             name = model.name.orEmpty()
         ).also(findNavController()::navigate)
     }
+
+    override fun onStart() {
+        super.onStart()
+        clearSearchView()
+    }
+    private fun clearSearchView() {
+        binding.searchView.setQuery("", false)
+        binding.searchView.clearFocus()
+    }
+
+
 }
