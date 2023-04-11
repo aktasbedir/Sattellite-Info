@@ -16,6 +16,7 @@ import com.bediraktas.satelliteinfo.databinding.FragmentSatelliteDetailBinding
 import com.bediraktas.satelliteinfo.domain.model.SatelliteDetailUIModel
 import com.bediraktas.satelliteinfo.presentation.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
@@ -33,6 +34,7 @@ class SatelliteDetailFragment :
                     it?.let {
                         when (it) {
                             SatelliteDetailViewState.Loading -> {
+                                delay(750)
                                 binding.progressBar.show()
                             }
                             is SatelliteDetailViewState.DataLoaded -> {
