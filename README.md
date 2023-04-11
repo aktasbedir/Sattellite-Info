@@ -23,4 +23,4 @@ Search Optimization -> Boyer Moore
   - [Hilt-Dagger](https://dagger.dev/hilt/)
   
 ##  Preview
-<img src="/documents/preview.gif" align="center" height="660"/>
+<img src="/documents/preview.gif" align="center" height="600"/>
